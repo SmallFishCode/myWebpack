@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>myWebpack</title>
+	</head>
+	<body>
+		<!-- <script src="./src/index.js"></script> -->
+
+		<script>
+			// bundle.js 原型 => webpack 打包之后
+			;(function (list) {
+				// 模拟 require
+				function require(file) {
+					var exports = {}
+					;(function (exports, code) {
+						eval(code)
+					})(exports, list[file])
+
+					return exports
+				}
+
+				// 入口
+				require('index.js')
+			})({
+				'add.js': `exports.default = function (a, b) { return a + b }`,
+				'index.js': `var add = require('add.js').default
+			                         console.log(add(2, 4))`,
+			})
+		</script>
+	</body>
+</html>

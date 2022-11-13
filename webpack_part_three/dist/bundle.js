@@ -14,7 +14,7 @@
 })({
 	'./src/index.js': {
 		deps: { './add.js': './src\\add.js' },
-		code: '"use strict";\n\nvar _add = _interopRequireDefault(require("./add.js"));\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }\nconsole.log((0, _add["default"])(2, 4));',
+		code: '"use strict";\n\nvar _add = _interopRequireDefault(require("./add.js"));\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }\nconsole.log(\'smallFish:\', (0, _add["default"])(2, 4));',
 	},
 	'./src\\add.js': {
 		deps: {},

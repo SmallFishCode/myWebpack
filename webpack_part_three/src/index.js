@@ -1,3 +1,3 @@
 import add from './add.js'
 
-console.log(add(2, 4))
+console.log('smallFish:', add(2, 4))
